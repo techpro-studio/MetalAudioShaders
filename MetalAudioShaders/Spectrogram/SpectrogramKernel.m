@@ -8,6 +8,16 @@
 
 #import "SpectrogramKernel.h"
 #import "CommandEncoderExtension.h"
+#import <Accelerate/Accelerate.h>
+
+
+typedef struct {
+    unsigned short outputFeatureChannels;
+    unsigned short outputSize;
+    unsigned short nfft;
+    unsigned short step;
+    float normalizationFactor;
+} Config;
 
 @implementation SpectrogramKernel
 {
@@ -35,19 +45,22 @@
         return;
     }
 
-    unsigned short config[4] = {
+
+    Config config = {
         descriptor.outputFeatureChannels,
         descriptor.outputSize,
         descriptor.nfft,
         descriptor.step,
+        descriptor.fftNormalizationFactor
     };
 
     [commandEncoder setComputePipelineState: self.pipelineState];
-    [commandEncoder setBytes: &config length: 4 * sizeof(unsigned short) atIndex: 0];
-    [commandEncoder setBuffer: inputVector.data offset: 0 atIndex: 1];
-    [commandEncoder setBuffer: resultMatrix.data offset: 0 atIndex: 2];
+    [commandEncoder setBytes: &config length:sizeof(Config) atIndex: 0];
+    [commandEncoder setBytes: descriptor.window.buffer length: descriptor.window.bufferLength atIndex:1];
+    [commandEncoder setBuffer: inputVector.data offset: 0 atIndex: 2];
+    [commandEncoder setBuffer: resultMatrix.data offset: 0 atIndex: 3];
 
-
+    
     [CommandEncoderExtension dispatchMatrix: resultMatrix inCommandEncoder: commandEncoder with: self.pipelineState];
 
     [commandEncoder endEncoding];
@@ -55,7 +68,7 @@
 
 -(void)describe
 {
-    NSLog(@"Spectrogram Input(size: %lu) -> Output(size: %d, feautures: %d)", (unsigned long)descriptor.inputSize, descriptor.outputSize, descriptor.outputFeatureChannels);
+    NSLog(@"Spectrogram Input(size: %d) -> Output(size: %d, feautures: %d)", descriptor.inputSize, descriptor.outputSize, descriptor.outputFeatureChannels);
 }
 
 @end

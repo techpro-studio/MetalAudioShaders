@@ -10,18 +10,17 @@
 #define half_h
 
 #include <Accelerate/Accelerate.h>
-//#import <objc/NSObjCRuntime.h>
 
 typedef unsigned short half;
 
-inline void vector_half_to_float(half* src, float *dst, unsigned long size)
+static inline void vector_half_to_float(half* src, float *dst, unsigned long size)
 {
     vImage_Buffer inputBuff = { src, 1, size, sizeof(half) };
     vImage_Buffer outputBuff = { dst, 1, size, sizeof(float) };
     vImageConvert_Planar16FtoPlanarF(&inputBuff, &outputBuff, 0);
 }
 
-inline void vector_float_to_half(float* src, half *dst, unsigned long size)
+static inline void vector_float_to_half(float* src, half *dst, unsigned long size)
 {
     vImage_Buffer inputBuff = { src, 1, size, sizeof(float) };
     vImage_Buffer outputBuff = { dst, 1, size, sizeof(half) };

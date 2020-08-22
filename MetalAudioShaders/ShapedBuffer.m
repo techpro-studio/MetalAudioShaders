@@ -11,6 +11,7 @@
 @implementation ShapedBuffer
 {
     NSArray<NSNumber *> *shape;
+    NSUInteger _bufferLength;
     void *ptr;
 }
 
@@ -35,6 +36,7 @@
         {
             size *= item.unsignedIntValue;
         }
+        _bufferLength = size;
         ptr = malloc(size);
 
     }
@@ -44,6 +46,11 @@
 - (void)dealloc
 {
     free(ptr);
+}
+
+-(NSUInteger)bufferLength
+{
+    return _bufferLength;
 }
 
 

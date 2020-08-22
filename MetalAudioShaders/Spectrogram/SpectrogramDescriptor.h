@@ -7,20 +7,33 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShapedBuffer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum WindowType: NSUInteger {
+    WindowTypeHamming = 1,
+    WindowTypeHann = 2,
+    WindowTypeBlackMan = 3,
+} WindowType;
+
+
+
 @interface SpectrogramDescriptor : NSObject
 
-@property (nonatomic, assign) unsigned short nfft;
+@property (nonatomic, readonly) unsigned short nfft;
 
-@property (nonatomic, assign) unsigned short noverlap;
+@property (nonatomic, readonly) unsigned short noverlap;
 
-@property (nonatomic, assign) NSUInteger inputSize;
+@property (nonatomic, assign) unsigned short fftNormalizationFactor;
 
-@property (nonatomic, assign) BOOL isComplex;
+@property (nonatomic, readonly) NSUInteger inputSize;
 
-@property (nonatomic, assign) BOOL useSinglePrecision;
+@property (nonatomic, readonly) BOOL isComplex;
+
+@property (nonatomic, readonly) BOOL useSinglePrecision;
+
+@property (nonatomic, retain) ShapedBuffer *window;
 
 // Size of column or number of rows
 @property (nonatomic, readonly) unsigned short outputFeatureChannels;
@@ -36,8 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
           useSinglePrecision: (BOOL) useSinglePrecision;
 
 
-
-
+-(void) setWindowWithType: (WindowType) type;
 
 @end
 

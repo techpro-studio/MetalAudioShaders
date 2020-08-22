@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSArray<NSNumber *> *) shape;
 
+-(NSUInteger) bufferLength;
+
 -(void *) buffer;
 
 @end

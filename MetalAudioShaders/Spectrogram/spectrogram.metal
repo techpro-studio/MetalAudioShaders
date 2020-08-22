@@ -14,6 +14,7 @@ struct Config {
     ushort outputSize;
     ushort nfft;
     ushort step;
+    float normalizationFactor;
 };
 
 template<typename T>
@@ -26,22 +27,24 @@ constexpr T pi(){
 }
 
 template<typename T>
-vec<T, 2> real_dft_step(constant T *input, ushort k, ushort nfft){
+vec<T, 2> real_dft_step(constant T *input, constant T* window, ushort k, ushort nfft){
     vec<T, 2> value {0.h, 0.h};
     for (int n = 0; n < nfft; ++n) {
+        T windowFactor = window[n];
         T angle = 2 * pi<T>() * n * k / nfft;
-        value += { *(input + n) * cos(angle), -1 * *(input + n) * sin(angle) };
+        value += { *(input + n) * windowFactor * cos(angle), -1 * *(input + n) * windowFactor * sin(angle) };
     }
     return value;
 }
 
 template<typename T>
-vec<T, 2> complex_dft_step(constant vec<T, 2> *input, ushort k, ushort nfft){
+vec<T, 2> complex_dft_step(constant vec<T, 2> *input, constant T* window,  ushort k, ushort nfft){
     vec<T, 2> value {0, 0};
     for (int n = 0; n < nfft; ++n) {
+        T windowFactor = window[n];
         T angle = 2 * pi<T>() * n * k / nfft;
         vec<T, 2> inputN = *(input + n);
-        value += { inputN[0] * cos(angle) + inputN[1] * sin(angle) , -1 * inputN[0] * sin(angle) + inputN[1] * cos(angle) };
+        value += { inputN[0] * windowFactor * cos(angle) + inputN[1] * windowFactor * sin(angle) , -1 * inputN[0] * windowFactor * sin(angle) + inputN[1] * windowFactor * cos(angle) };
     }
     return value;
 }
@@ -55,43 +58,45 @@ T calculate_magnitude(vec<T, 2> complex) {
 }
 
 template<typename T>
-void spectrogram_real(constant Config& config, constant T *input, device T *output, ushort2 index[[thread_position_in_grid]])
+void spectrogram_real(constant Config& config, constant T* window, constant T *input, device T *output, ushort2 index[[thread_position_in_grid]])
 {
     if (index.x >= config.outputSize || index.y >= config.outputFeatureChannels) { return; }
     constant T *input_begin = input + index.x * config.step;
-    vec<T, 2> dft = real_dft_step(input_begin, index.y, config.nfft);
+    vec<T, 2> dft = real_dft_step(input_begin, window, index.y, config.nfft);
+    dft *= (T) config.normalizationFactor;
     uint outputIndex = index.y * config.outputSize + index.x;
     output[outputIndex] = calculate_magnitude(dft);
 }
 
 template<typename T>
-void spectrogram_complex(constant Config& config, constant vec<T, 2> *input, device T *output, ushort2 index[[thread_position_in_grid]])
+void spectrogram_complex(constant Config& config, constant T* window, constant vec<T, 2> *input, device T *output, ushort2 index[[thread_position_in_grid]])
 {
     if (index.x >= config.outputSize || index.y >= config.outputFeatureChannels) { return; }
     constant vec<T, 2> *input_begin = input + index.x * config.step;
-    vec<T, 2> dft = complex_dft_step(input_begin, index.y, config.nfft);
+    vec<T, 2> dft = complex_dft_step(input_begin, window, index.y, config.nfft);
+    dft *= (T) config.normalizationFactor;
     uint outputIndex = index.y * config.outputSize + index.x;
     output[outputIndex] = calculate_magnitude(dft);
 }
 
-kernel void spectrogram_real_half(constant Config& config, constant half *input,  device half *output, ushort2 index[[thread_position_in_grid]])
+kernel void spectrogram_real_half(constant Config& config, constant half* window, constant half *input,  device half *output, ushort2 index[[thread_position_in_grid]])
 {
-    spectrogram_real(config, input, output, index);
+    spectrogram_real(config, window, input, output, index);
 }
 
-kernel void spectrogram_real_float(constant Config& config, constant float *input,  device float *output, ushort2 index[[thread_position_in_grid]])
+kernel void spectrogram_real_float(constant Config& config, constant float* window, constant float *input,  device float *output, ushort2 index[[thread_position_in_grid]])
 {
-    spectrogram_real(config, input, output, index);
+    spectrogram_real(config, window, input, output, index);
 }
 
-kernel void spectrogram_complex_half(constant Config& config, constant half2 *input,  device half *output, ushort2 index[[thread_position_in_grid]])
+kernel void spectrogram_complex_half(constant Config& config, constant half* window, constant half2 *input,  device half *output, ushort2 index[[thread_position_in_grid]])
 {
-    spectrogram_complex(config, input, output, index);
+    spectrogram_complex(config, window, input, output, index);
 }
 
-kernel void spectrogram_complex_float(constant Config& config, constant float2 *input, device float *output, ushort2 index[[thread_position_in_grid]])
+kernel void spectrogram_complex_float(constant Config& config, constant float* window, constant float2 *input, device float *output, ushort2 index[[thread_position_in_grid]])
 {
-    spectrogram_complex(config, input, output, index);
+    spectrogram_complex(config, window, input, output, index);
 }
 
 
