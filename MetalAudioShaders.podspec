@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.ios.pod_target_xcconfig = { 'METAL_LIBRARY_OUTPUT_DIR' => '${TARGET_BUILD_DIR}/MetalAudioShaders.bundle/' }
   s.osx.pod_target_xcconfig = { 'METAL_LIBRARY_OUTPUT_DIR' => '${TARGET_BUILD_DIR}/MetalAudioShaders.bundle/Contents/Resources/' }
-  s.resource_bundle = { 'MetalAudioShaders' => ['CocoaPodsBundledResourcePlaceholder'] }
+  s.resource_bundle = { 'MetalAudioShaders' => ['MetalAudioShaders/CocoaPodsBundledResourcePlaceholder'] }
 
   s.weak_frameworks = 'MetalPerformanceShaders', 'Metal'
    
