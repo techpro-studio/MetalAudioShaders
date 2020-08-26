@@ -36,6 +36,7 @@
     [commandEncoder setBytes: &config length:2 * sizeof(unsigned short) atIndex:0];
     [commandEncoder setBuffer:matrix.data offset:0 atIndex:1];
     [commandEncoder setTexture:image.texture atIndex:2];
+    
 
     [MASCommandEncoderExtension dispatchMatrix:matrix inCommandEncoder:commandEncoder with: self.pipelineState];
 
