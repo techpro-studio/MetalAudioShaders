@@ -28,10 +28,4 @@
 }
 
 
-+ (void)dispatchImage:(MPSImage *)image
-     inCommandEncoder:(id<MTLComputeCommandEncoder>)commandEncoder with:(id<MTLComputePipelineState>)pipelineState
-{
-    
-}
-
 @end

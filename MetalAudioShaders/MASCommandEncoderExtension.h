@@ -18,9 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
      inCommandEncoder: (id<MTLComputeCommandEncoder>) commandEncoder
                  with: (id<MTLComputePipelineState>) pipelineState;
 
-+(void)dispatchImage: (MPSImage *) image
-     inCommandEncoder: (id<MTLComputeCommandEncoder>) commandEncoder
-                 with: (id<MTLComputePipelineState>) pipelineState;
 
 @end
 
