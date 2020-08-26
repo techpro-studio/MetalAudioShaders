@@ -22,6 +22,9 @@
         return buffer;
     }
     NSData *data = [NSData dataWithContentsOfFile:filePath];
+    if (data == nil) {
+        return buffer;
+    }
     memcpy([buffer buffer], [data bytes], [buffer bufferLength]);
     return buffer;
 }

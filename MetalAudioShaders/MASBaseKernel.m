@@ -26,7 +26,11 @@
     if (self) {
         self.device = device;
 
-        __auto_type library = [device newDefaultLibrary];
+        NSError *error;
+
+        __auto_type libURL = [self libraryURL];
+
+        __auto_type library = [device newLibraryWithURL:libURL error:&error];
 
         if (library == nil) {
             @throw [NSException exceptionWithName:@"no library" reason:@"library not found" userInfo:nil];
@@ -37,7 +41,7 @@
         if (function == nil) {
             @throw [NSException exceptionWithName:@"no function" reason:[NSString stringWithFormat:@"Function with name '%@' not found", functionName] userInfo:nil];
         }
-        NSError *error;
+
 
         self.pipelineState = [device newComputePipelineStateWithFunction:function error:&error];
 
@@ -46,6 +50,16 @@
         }
     }
     return self;
+}
+
+
+-(NSURL *) libraryURL
+{
+    NSBundle* bundle = [NSBundle bundleForClass: MASBaseKernel.class];
+    NSURL* bundleURL = [[bundle resourceURL] URLByAppendingPathComponent: @"MetalAudioShaders.bundle"];
+    __auto_type currentBundle = [NSBundle bundleWithURL: bundleURL];
+    __auto_type libURL = [currentBundle URLForResource:@"default" withExtension:@"metallib"];
+    return libURL;
 }
 
 -(void) describe

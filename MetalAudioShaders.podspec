@@ -1,28 +1,25 @@
-#
-# Be sure to run `pod lib lint MetalAudioShaders.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'MetalAudioShaders'
   s.version          = '0.1.0'
-  s.summary          = 'MPS like kernels for audio processing.'
-
-  s.description      = 'MPS like kernels for audio processing. Spectrogram vector -> matrix. Conv1D  matrix -> matrix'
+  s.summary          = 'MAS'
+  s.description      = "MPS like shaders for audio processing. Spectrogram. Conv1d"
 
   s.homepage         = 'https://github.com/techpro-studio/MetalAudioShaders'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Oleksii Moiseenko' => 'alex@techpro.studio' }
-  s.source           = { :git => 'https://github.com/techpro-studio/MetalAudioShaders.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/techprostudio'
+  s.author           = { 'Oleksii Moiseenko' => 'oleksiimoiseenko@gmail.com' }
+  s.source           = { :git => 'https://github.com/techpro-studio/MetalAudioShaders.git', :tag => s.version }
+  s.requires_arc = true
 
   s.ios.deployment_target = '11.0'
-	
-  s.source_files = 'MetalAudioShaders/**/*'
+  s.osx.deployment_target = '10.13'
+
+  s.source_files = 'MetalAudioShaders/**/*.{h,m,metal}'
   s.exclude_files = "MetalAudioShaders/*.plist"
- 
-  s.frameworks = 'Metal', 'MetalPerformanceShaders'
+
+  s.ios.pod_target_xcconfig = { 'METAL_LIBRARY_OUTPUT_DIR' => '${TARGET_BUILD_DIR}/MetalAudioShaders.bundle/' }
+  s.osx.pod_target_xcconfig = { 'METAL_LIBRARY_OUTPUT_DIR' => '${TARGET_BUILD_DIR}/MetalAudioShaders.bundle/Contents/Resources/' }
+  s.resource_bundle = { 'MetalAudioShaders' => ['CocoaPodsBundledResourcePlaceholder'] }
+
+  s.weak_frameworks = 'MetalPerformanceShaders', 'Metal'
+   
 end

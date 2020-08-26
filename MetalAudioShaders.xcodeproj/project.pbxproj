@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3DA1A324F6634700A33ED4 /* conv1d.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2E24F63F9300AE8539 /* conv1d.metal */; };
+		FA3DA1A424F6634D00A33ED4 /* spectrogram.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2A24F63F9300AE8539 /* spectrogram.metal */; };
+		FAA330A824F646CF000A60F1 /* MetalAudioShaders.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA330A724F646CF000A60F1 /* MetalAudioShaders.h */; };
 		FAD21B3B24F63F9300AE8539 /* MASBaseKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2624F63F9300AE8539 /* MASBaseKernel.m */; };
 		FAD21B3C24F63F9300AE8539 /* MASConv1dFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2724F63F9300AE8539 /* MASConv1dFactory.m */; };
 		FAD21B3D24F63F9300AE8539 /* MASConv1dKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2824F63F9300AE8539 /* MASConv1dKernel.m */; };
 		FAD21B3E24F63F9300AE8539 /* MASSpectrogramFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2924F63F9300AE8539 /* MASSpectrogramFactory.m */; };
-		FAD21B3F24F63F9300AE8539 /* spectrogram.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2A24F63F9300AE8539 /* spectrogram.metal */; };
 		FAD21B4024F63F9300AE8539 /* MASShapedBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2B24F63F9300AE8539 /* MASShapedBuffer.m */; };
 		FAD21B4124F63F9300AE8539 /* MASConv1dDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2C24F63F9300AE8539 /* MASConv1dDescriptor.m */; };
 		FAD21B4224F63F9300AE8539 /* MASBaseKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B2D24F63F9300AE8539 /* MASBaseKernel.h */; };
-		FAD21B4324F63F9300AE8539 /* conv1d.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2E24F63F9300AE8539 /* conv1d.metal */; };
 		FAD21B4424F63F9300AE8539 /* MASConv1dFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B2F24F63F9300AE8539 /* MASConv1dFactory.h */; };
 		FAD21B4524F63F9300AE8539 /* MASConv1dKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3024F63F9300AE8539 /* MASConv1dKernel.h */; };
 		FAD21B4624F63F9300AE8539 /* MASSpectrogramDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3124F63F9300AE8539 /* MASSpectrogramDescriptor.h */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		FA6FE0D924E546F800C2C3D3 /* MetalAudioShaders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalAudioShaders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6FE0DD24E546F800C2C3D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA330A724F646CF000A60F1 /* MetalAudioShaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalAudioShaders.h; sourceTree = "<group>"; };
 		FAD21B2624F63F9300AE8539 /* MASBaseKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBaseKernel.m; sourceTree = "<group>"; };
 		FAD21B2724F63F9300AE8539 /* MASConv1dFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConv1dFactory.m; sourceTree = "<group>"; };
 		FAD21B2824F63F9300AE8539 /* MASConv1dKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConv1dKernel.m; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				FAD21B3A24F63F9300AE8539 /* MASShapedBuffer.h */,
 				FAD21B2B24F63F9300AE8539 /* MASShapedBuffer.m */,
 				FA6FE0DD24E546F800C2C3D3 /* Info.plist */,
+				FAA330A724F646CF000A60F1 /* MetalAudioShaders.h */,
 			);
 			path = MetalAudioShaders;
 			sourceTree = "<group>";
@@ -118,13 +121,13 @@
 		FAD21B5124F63FC000AE8539 /* Spectrogram */ = {
 			isa = PBXGroup;
 			children = (
+				FAD21B2A24F63F9300AE8539 /* spectrogram.metal */,
 				FAD21B3124F63F9300AE8539 /* MASSpectrogramDescriptor.h */,
 				FAD21B3524F63F9300AE8539 /* MASSpectrogramDescriptor.m */,
 				FAD21B3424F63F9300AE8539 /* MASSpectrogramFactory.h */,
 				FAD21B2924F63F9300AE8539 /* MASSpectrogramFactory.m */,
 				FAD21B3624F63F9300AE8539 /* MASSpectrogramKernel.h */,
 				FAD21B3724F63F9300AE8539 /* MASSpectrogramKernel.m */,
-				FAD21B2A24F63F9300AE8539 /* spectrogram.metal */,
 			);
 			path = Spectrogram;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD21B4524F63F9300AE8539 /* MASConv1dKernel.h in Headers */,
+				FAA330A824F646CF000A60F1 /* MetalAudioShaders.h in Headers */,
 				FAD21B4F24F63F9300AE8539 /* MASShapedBuffer.h in Headers */,
 				FAD21B4424F63F9300AE8539 /* MASConv1dFactory.h in Headers */,
 				FAD21B4924F63F9300AE8539 /* MASSpectrogramFactory.h in Headers */,
@@ -223,17 +227,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD21B4324F63F9300AE8539 /* conv1d.metal in Sources */,
+				FA3DA1A324F6634700A33ED4 /* conv1d.metal in Sources */,
 				FAD21B4D24F63F9300AE8539 /* MASCommandEncoderExtension.m in Sources */,
 				FAD21B3D24F63F9300AE8539 /* MASConv1dKernel.m in Sources */,
 				FAD21B4C24F63F9300AE8539 /* MASSpectrogramKernel.m in Sources */,
 				FAD21B4124F63F9300AE8539 /* MASConv1dDescriptor.m in Sources */,
 				FAD21B4A24F63F9300AE8539 /* MASSpectrogramDescriptor.m in Sources */,
 				FAD21B3B24F63F9300AE8539 /* MASBaseKernel.m in Sources */,
-				FAD21B3F24F63F9300AE8539 /* spectrogram.metal in Sources */,
 				FAD21B3E24F63F9300AE8539 /* MASSpectrogramFactory.m in Sources */,
 				FAD21B4024F63F9300AE8539 /* MASShapedBuffer.m in Sources */,
 				FAD21B3C24F63F9300AE8539 /* MASConv1dFactory.m in Sources */,
+				FA3DA1A424F6634D00A33ED4 /* spectrogram.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +381,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = studio.techpro.MetalAudioShaders;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -401,6 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = studio.techpro.MetalAudioShaders;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
