@@ -7,19 +7,19 @@
 //
 
 #import <Metal/Metal.h>
-#import "Conv1DDescriptor.h"
+#import "MASConv1dDescriptor.h"
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
-#import "BaseKernel.h"
-#import "ShapedBuffer.h"
+#import "MASBaseKernel.h"
+#import "MASShapedBuffer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Conv1DKernel: BaseKernel
+@interface MASConv1dKernel: MASBaseKernel
 
 -(instancetype) initWithDevice: (id<MTLDevice>) device
-                 andDescriptor: (Conv1DDescriptor *) descriptor
-                       weights: (ShapedBuffer *) weights
-                        biases: (ShapedBuffer *) biases;
+                 andDescriptor: (MASConv1dDescriptor *) descriptor
+                       weights: (MASShapedBuffer *) weights
+                        biases: (MASShapedBuffer *) biases;
 
 -(void) encodeToCommandBuffer: (id<MTLCommandBuffer>) buffer
                   inputMatrix: (MPSMatrix * _Nonnull) inputMatrix

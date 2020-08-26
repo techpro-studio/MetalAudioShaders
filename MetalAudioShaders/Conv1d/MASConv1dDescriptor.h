@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ShapedBuffer.h"
+#import "MASShapedBuffer.h"
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface Conv1DDescriptor : NSObject
+@interface MASConv1dDescriptor : NSObject
 
 @property (nonatomic, assign) unsigned short kernelSize;
 @property (nonatomic, assign) unsigned short inputFeatureChannels;
@@ -31,10 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
                 useSinglePrecision: (BOOL) useSinglePrecision;
 
 
--(ShapedBuffer *) createWeights;
--(ShapedBuffer *) createBiases;
--(MPSMatrixDescriptor *) inputMatrixDescriptor;
--(MPSMatrixDescriptor *) outputMatrixDescriptor;
+
 
 @end
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ShapedBuffer.h"
+#import "MASShapedBuffer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ typedef enum WindowType: NSUInteger {
 
 
 
-@interface SpectrogramDescriptor : NSObject
+@interface MASSpectrogramDescriptor : NSObject
 
 @property (nonatomic, readonly) unsigned short nfft;
 
@@ -33,7 +33,7 @@ typedef enum WindowType: NSUInteger {
 
 @property (nonatomic, readonly) BOOL useSinglePrecision;
 
-@property (nonatomic, retain) ShapedBuffer *window;
+@property (nonatomic, retain) MASShapedBuffer *window;
 
 // Size of column or number of rows
 @property (nonatomic, readonly) unsigned short outputFeatureChannels;
@@ -50,6 +50,7 @@ typedef enum WindowType: NSUInteger {
 
 
 -(void) setWindowWithType: (WindowType) type;
+
 
 @end
 

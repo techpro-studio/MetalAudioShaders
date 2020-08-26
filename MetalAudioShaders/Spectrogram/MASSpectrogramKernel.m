@@ -6,8 +6,8 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "SpectrogramKernel.h"
-#import "CommandEncoderExtension.h"
+#import "MASSpectrogramKernel.h"
+#import "MASCommandEncoderExtension.h"
 #import <Accelerate/Accelerate.h>
 
 
@@ -19,13 +19,13 @@ typedef struct {
     float normalizationFactor;
 } Config;
 
-@implementation SpectrogramKernel
+@implementation MASSpectrogramKernel
 {
-    SpectrogramDescriptor *descriptor;
+    MASSpectrogramDescriptor *descriptor;
 }
 
 - (instancetype)initWithDevice:(id<MTLDevice>)device
-                 andDescriptor:(SpectrogramDescriptor *)descriptor
+                 andDescriptor:(MASSpectrogramDescriptor *)descriptor
 {
     NSString* functionName = [NSString stringWithFormat:@"spectrogram_%@_%@", descriptor.isComplex ? @"complex" : @"real", descriptor.useSinglePrecision ? @"float" : @"half"];
     self = [super initWithDevice:device functionName: functionName];
@@ -61,14 +61,14 @@ typedef struct {
     [commandEncoder setBuffer: resultMatrix.data offset: 0 atIndex: 3];
 
     
-    [CommandEncoderExtension dispatchMatrix: resultMatrix inCommandEncoder: commandEncoder with: self.pipelineState];
+    [MASCommandEncoderExtension dispatchMatrix: resultMatrix inCommandEncoder: commandEncoder with: self.pipelineState];
 
     [commandEncoder endEncoding];
 }
 
 -(void)describe
 {
-    NSLog(@"Spectrogram Input(size: %d) -> Output(size: %d, feautures: %d)", descriptor.inputSize, descriptor.outputSize, descriptor.outputFeatureChannels);
+    NSLog(@"Spectrogram Input(size: %lu) -> Output(size: %d, feautures: %d)", (unsigned long)descriptor.inputSize, descriptor.outputSize, descriptor.outputFeatureChannels);
 }
 
 @end

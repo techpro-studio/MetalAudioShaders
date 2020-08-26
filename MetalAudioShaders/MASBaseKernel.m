@@ -6,10 +6,10 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "BaseKernel.h"
+#import "MASBaseKernel.h"
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
 
-@interface BaseKernel ()
+@interface MASBaseKernel ()
 
 @property (readwrite, nonatomic) id<MTLDevice> device;
 
@@ -18,7 +18,7 @@
 @end
 
 
-@implementation BaseKernel
+@implementation MASBaseKernel
 
 -(instancetype)initWithDevice:(id<MTLDevice>)device functionName:(nonnull NSString *)functionName
 {

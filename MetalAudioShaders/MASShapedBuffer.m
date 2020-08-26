@@ -6,9 +6,9 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "ShapedBuffer.h"
+#import "MASShapedBuffer.h"
 
-@implementation ShapedBuffer
+@implementation MASShapedBuffer
 {
     NSArray<NSNumber *> *shape;
     NSUInteger _bufferLength;

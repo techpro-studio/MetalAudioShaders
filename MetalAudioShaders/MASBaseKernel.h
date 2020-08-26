@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseKernel : NSObject
+@interface MASBaseKernel : NSObject
 
 @property (readonly, nonatomic) id<MTLComputePipelineState> pipelineState;
 

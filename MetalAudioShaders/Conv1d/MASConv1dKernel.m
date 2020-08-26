@@ -6,22 +6,22 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "Conv1DKernel.h"
+#import "MASConv1dKernel.h"
 #import "half.h"
-#import "CommandEncoderExtension.h"
+#import "MASCommandEncoderExtension.h"
 
 
-@implementation Conv1DKernel
+@implementation MASConv1dKernel
 {
-    Conv1DDescriptor *descriptor;
+    MASConv1dDescriptor *descriptor;
     id<MTLBuffer> weights;
     id<MTLBuffer> biases;
 }
 
 - (instancetype)initWithDevice: (id<MTLDevice>) device
-                 andDescriptor: (Conv1DDescriptor *) descriptor
-                       weights: (ShapedBuffer *) weights
-                        biases: (ShapedBuffer *) biases;
+                 andDescriptor: (MASConv1dDescriptor *) descriptor
+                       weights: (MASShapedBuffer *) weights
+                        biases: (MASShapedBuffer *) biases;
 {
     self = [super initWithDevice:device functionName: descriptor.useSinglePrecision
             ? @"conv1d_float" : @"conv1d_half"];
@@ -34,7 +34,7 @@
     return self;
 }
 
--(id<MTLBuffer>) makeMTLBuffer: (NSUInteger) count fromShaped:(ShapedBuffer*) shapedBuffer
+-(id<MTLBuffer>) makeMTLBuffer: (NSUInteger) count fromShaped:(MASShapedBuffer*) shapedBuffer
 {
     NSUInteger size = (descriptor.useSinglePrecision ? sizeof(float) : sizeof(half)) * count;
     id<MTLBuffer> buffer = [self.device newBufferWithLength: size  options: MTLResourceStorageModeShared];
@@ -68,7 +68,7 @@
     [commandEncoder setBuffer: weights offset: 0  atIndex: 3];
     [commandEncoder setBuffer: biases offset: 0 atIndex: 4];
 
-    [CommandEncoderExtension dispatchMatrix: resultMatrix inCommandEncoder: commandEncoder with:self.pipelineState];
+    [MASCommandEncoderExtension dispatchMatrix: resultMatrix inCommandEncoder: commandEncoder with:self.pipelineState];
 
     [commandEncoder endEncoding];
 }

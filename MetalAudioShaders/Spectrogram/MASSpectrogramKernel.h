@@ -6,17 +6,17 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "BaseKernel.h"
+#import "MASBaseKernel.h"
 #import <Metal/Metal.h>
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
-#import "SpectrogramDescriptor.h"
+#import "MASSpectrogramDescriptor.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SpectrogramKernel : BaseKernel
+@interface MASSpectrogramKernel : MASBaseKernel
 
 -(instancetype) initWithDevice: (id<MTLDevice>) device
-                 andDescriptor: (SpectrogramDescriptor *) descriptor;
+                 andDescriptor: (MASSpectrogramDescriptor *) descriptor;
 
 -(void) encodeToCommandBuffer: (id<MTLCommandBuffer>) buffer
                   inputVector: (MPSVector * _Nonnull) inputVector

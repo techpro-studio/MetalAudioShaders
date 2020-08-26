@@ -6,9 +6,9 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "CommandEncoderExtension.h"
+#import "MASCommandEncoderExtension.h"
 
-@implementation CommandEncoderExtension
+@implementation MASCommandEncoderExtension
 
 +(void)dispatchMatrix: (MPSMatrix *)matrix
      inCommandEncoder: (id<MTLComputeCommandEncoder>) commandEncoder
@@ -27,5 +27,11 @@
     [commandEncoder dispatchThreadgroups:threadGroups threadsPerThreadgroup: threadGroupSize];
 }
 
+
++ (void)dispatchImage:(MPSImage *)image
+     inCommandEncoder:(id<MTLComputeCommandEncoder>)commandEncoder with:(id<MTLComputePipelineState>)pipelineState
+{
+    
+}
 
 @end

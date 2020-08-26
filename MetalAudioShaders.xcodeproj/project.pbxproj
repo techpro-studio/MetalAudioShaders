@@ -7,47 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA5F776824F12ABA00442C36 /* spectrogram.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA5F775724F12ABA00442C36 /* spectrogram.metal */; };
-		FA5F776924F12ABA00442C36 /* Conv1DDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F775824F12ABA00442C36 /* Conv1DDescriptor.m */; };
-		FA5F776A24F12ABA00442C36 /* Conv1DKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F775924F12ABA00442C36 /* Conv1DKernel.h */; };
-		FA5F776B24F12ABA00442C36 /* Conv1DKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F775A24F12ABA00442C36 /* Conv1DKernel.m */; };
-		FA5F776C24F12ABA00442C36 /* ShapedBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F775B24F12ABA00442C36 /* ShapedBuffer.m */; };
-		FA5F776D24F12ABA00442C36 /* SpectrogramKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F775C24F12ABA00442C36 /* SpectrogramKernel.h */; };
-		FA5F776E24F12ABA00442C36 /* half.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F775D24F12ABA00442C36 /* half.h */; };
-		FA5F776F24F12ABA00442C36 /* BaseKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F775E24F12ABA00442C36 /* BaseKernel.m */; };
-		FA5F777024F12ABA00442C36 /* SpectrogramKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F775F24F12ABA00442C36 /* SpectrogramKernel.m */; };
-		FA5F777124F12ABA00442C36 /* CommandEncoderExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F776024F12ABA00442C36 /* CommandEncoderExtension.h */; };
-		FA5F777224F12ABA00442C36 /* SpectrogramDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F776124F12ABA00442C36 /* SpectrogramDescriptor.h */; };
-		FA5F777324F12ABA00442C36 /* SpectrogramDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F776224F12ABA00442C36 /* SpectrogramDescriptor.m */; };
-		FA5F777424F12ABA00442C36 /* Conv1DDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F776324F12ABA00442C36 /* Conv1DDescriptor.h */; };
-		FA5F777524F12ABA00442C36 /* CommandEncoderExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5F776424F12ABA00442C36 /* CommandEncoderExtension.m */; };
-		FA5F777624F12ABA00442C36 /* conv1d.metal in Sources */ = {isa = PBXBuildFile; fileRef = FA5F776524F12ABA00442C36 /* conv1d.metal */; };
-		FA5F777724F12ABA00442C36 /* BaseKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F776624F12ABA00442C36 /* BaseKernel.h */; };
-		FA5F777824F12ABA00442C36 /* ShapedBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5F776724F12ABA00442C36 /* ShapedBuffer.h */; };
-		FA6FE0DE24E546F800C2C3D3 /* MetalAudioShaders.h in Headers */ = {isa = PBXBuildFile; fileRef = FA6FE0DC24E546F800C2C3D3 /* MetalAudioShaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAD21B3B24F63F9300AE8539 /* MASBaseKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2624F63F9300AE8539 /* MASBaseKernel.m */; };
+		FAD21B3C24F63F9300AE8539 /* MASConv1dFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2724F63F9300AE8539 /* MASConv1dFactory.m */; };
+		FAD21B3D24F63F9300AE8539 /* MASConv1dKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2824F63F9300AE8539 /* MASConv1dKernel.m */; };
+		FAD21B3E24F63F9300AE8539 /* MASSpectrogramFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2924F63F9300AE8539 /* MASSpectrogramFactory.m */; };
+		FAD21B3F24F63F9300AE8539 /* spectrogram.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2A24F63F9300AE8539 /* spectrogram.metal */; };
+		FAD21B4024F63F9300AE8539 /* MASShapedBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2B24F63F9300AE8539 /* MASShapedBuffer.m */; };
+		FAD21B4124F63F9300AE8539 /* MASConv1dDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2C24F63F9300AE8539 /* MASConv1dDescriptor.m */; };
+		FAD21B4224F63F9300AE8539 /* MASBaseKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B2D24F63F9300AE8539 /* MASBaseKernel.h */; };
+		FAD21B4324F63F9300AE8539 /* conv1d.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B2E24F63F9300AE8539 /* conv1d.metal */; };
+		FAD21B4424F63F9300AE8539 /* MASConv1dFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B2F24F63F9300AE8539 /* MASConv1dFactory.h */; };
+		FAD21B4524F63F9300AE8539 /* MASConv1dKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3024F63F9300AE8539 /* MASConv1dKernel.h */; };
+		FAD21B4624F63F9300AE8539 /* MASSpectrogramDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3124F63F9300AE8539 /* MASSpectrogramDescriptor.h */; };
+		FAD21B4724F63F9300AE8539 /* MASCommandEncoderExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3224F63F9300AE8539 /* MASCommandEncoderExtension.h */; };
+		FAD21B4824F63F9300AE8539 /* half.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3324F63F9300AE8539 /* half.h */; };
+		FAD21B4924F63F9300AE8539 /* MASSpectrogramFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3424F63F9300AE8539 /* MASSpectrogramFactory.h */; };
+		FAD21B4A24F63F9300AE8539 /* MASSpectrogramDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B3524F63F9300AE8539 /* MASSpectrogramDescriptor.m */; };
+		FAD21B4B24F63F9300AE8539 /* MASSpectrogramKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3624F63F9300AE8539 /* MASSpectrogramKernel.h */; };
+		FAD21B4C24F63F9300AE8539 /* MASSpectrogramKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B3724F63F9300AE8539 /* MASSpectrogramKernel.m */; };
+		FAD21B4D24F63F9300AE8539 /* MASCommandEncoderExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B3824F63F9300AE8539 /* MASCommandEncoderExtension.m */; };
+		FAD21B4E24F63F9300AE8539 /* MASConv1dDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3924F63F9300AE8539 /* MASConv1dDescriptor.h */; };
+		FAD21B4F24F63F9300AE8539 /* MASShapedBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3A24F63F9300AE8539 /* MASShapedBuffer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA5F775724F12ABA00442C36 /* spectrogram.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = spectrogram.metal; sourceTree = "<group>"; };
-		FA5F775824F12ABA00442C36 /* Conv1DDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conv1DDescriptor.m; sourceTree = "<group>"; };
-		FA5F775924F12ABA00442C36 /* Conv1DKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conv1DKernel.h; sourceTree = "<group>"; };
-		FA5F775A24F12ABA00442C36 /* Conv1DKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conv1DKernel.m; sourceTree = "<group>"; };
-		FA5F775B24F12ABA00442C36 /* ShapedBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapedBuffer.m; sourceTree = "<group>"; };
-		FA5F775C24F12ABA00442C36 /* SpectrogramKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectrogramKernel.h; sourceTree = "<group>"; };
-		FA5F775D24F12ABA00442C36 /* half.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = half.h; sourceTree = "<group>"; };
-		FA5F775E24F12ABA00442C36 /* BaseKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKernel.m; sourceTree = "<group>"; };
-		FA5F775F24F12ABA00442C36 /* SpectrogramKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectrogramKernel.m; sourceTree = "<group>"; };
-		FA5F776024F12ABA00442C36 /* CommandEncoderExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandEncoderExtension.h; sourceTree = "<group>"; };
-		FA5F776124F12ABA00442C36 /* SpectrogramDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectrogramDescriptor.h; sourceTree = "<group>"; };
-		FA5F776224F12ABA00442C36 /* SpectrogramDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectrogramDescriptor.m; sourceTree = "<group>"; };
-		FA5F776324F12ABA00442C36 /* Conv1DDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conv1DDescriptor.h; sourceTree = "<group>"; };
-		FA5F776424F12ABA00442C36 /* CommandEncoderExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandEncoderExtension.m; sourceTree = "<group>"; };
-		FA5F776524F12ABA00442C36 /* conv1d.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = conv1d.metal; sourceTree = "<group>"; };
-		FA5F776624F12ABA00442C36 /* BaseKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseKernel.h; sourceTree = "<group>"; };
-		FA5F776724F12ABA00442C36 /* ShapedBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapedBuffer.h; sourceTree = "<group>"; };
 		FA6FE0D924E546F800C2C3D3 /* MetalAudioShaders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalAudioShaders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6FE0DC24E546F800C2C3D3 /* MetalAudioShaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalAudioShaders.h; sourceTree = "<group>"; };
 		FA6FE0DD24E546F800C2C3D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD21B2624F63F9300AE8539 /* MASBaseKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASBaseKernel.m; sourceTree = "<group>"; };
+		FAD21B2724F63F9300AE8539 /* MASConv1dFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConv1dFactory.m; sourceTree = "<group>"; };
+		FAD21B2824F63F9300AE8539 /* MASConv1dKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConv1dKernel.m; sourceTree = "<group>"; };
+		FAD21B2924F63F9300AE8539 /* MASSpectrogramFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASSpectrogramFactory.m; sourceTree = "<group>"; };
+		FAD21B2A24F63F9300AE8539 /* spectrogram.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = spectrogram.metal; sourceTree = "<group>"; };
+		FAD21B2B24F63F9300AE8539 /* MASShapedBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShapedBuffer.m; sourceTree = "<group>"; };
+		FAD21B2C24F63F9300AE8539 /* MASConv1dDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConv1dDescriptor.m; sourceTree = "<group>"; };
+		FAD21B2D24F63F9300AE8539 /* MASBaseKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASBaseKernel.h; sourceTree = "<group>"; };
+		FAD21B2E24F63F9300AE8539 /* conv1d.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = conv1d.metal; sourceTree = "<group>"; };
+		FAD21B2F24F63F9300AE8539 /* MASConv1dFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConv1dFactory.h; sourceTree = "<group>"; };
+		FAD21B3024F63F9300AE8539 /* MASConv1dKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConv1dKernel.h; sourceTree = "<group>"; };
+		FAD21B3124F63F9300AE8539 /* MASSpectrogramDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASSpectrogramDescriptor.h; sourceTree = "<group>"; };
+		FAD21B3224F63F9300AE8539 /* MASCommandEncoderExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCommandEncoderExtension.h; sourceTree = "<group>"; };
+		FAD21B3324F63F9300AE8539 /* half.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = half.h; sourceTree = "<group>"; };
+		FAD21B3424F63F9300AE8539 /* MASSpectrogramFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASSpectrogramFactory.h; sourceTree = "<group>"; };
+		FAD21B3524F63F9300AE8539 /* MASSpectrogramDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASSpectrogramDescriptor.m; sourceTree = "<group>"; };
+		FAD21B3624F63F9300AE8539 /* MASSpectrogramKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASSpectrogramKernel.h; sourceTree = "<group>"; };
+		FAD21B3724F63F9300AE8539 /* MASSpectrogramKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASSpectrogramKernel.m; sourceTree = "<group>"; };
+		FAD21B3824F63F9300AE8539 /* MASCommandEncoderExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCommandEncoderExtension.m; sourceTree = "<group>"; };
+		FAD21B3924F63F9300AE8539 /* MASConv1dDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConv1dDescriptor.h; sourceTree = "<group>"; };
+		FAD21B3A24F63F9300AE8539 /* MASShapedBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShapedBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,30 +67,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA5F777924F12ABD00442C36 /* Conv1D */ = {
-			isa = PBXGroup;
-			children = (
-				FA5F776524F12ABA00442C36 /* conv1d.metal */,
-				FA5F776324F12ABA00442C36 /* Conv1DDescriptor.h */,
-				FA5F775824F12ABA00442C36 /* Conv1DDescriptor.m */,
-				FA5F775924F12ABA00442C36 /* Conv1DKernel.h */,
-				FA5F775A24F12ABA00442C36 /* Conv1DKernel.m */,
-			);
-			path = Conv1D;
-			sourceTree = "<group>";
-		};
-		FA5F777A24F12AC800442C36 /* Spectrogram */ = {
-			isa = PBXGroup;
-			children = (
-				FA5F775724F12ABA00442C36 /* spectrogram.metal */,
-				FA5F776124F12ABA00442C36 /* SpectrogramDescriptor.h */,
-				FA5F776224F12ABA00442C36 /* SpectrogramDescriptor.m */,
-				FA5F775C24F12ABA00442C36 /* SpectrogramKernel.h */,
-				FA5F775F24F12ABA00442C36 /* SpectrogramKernel.m */,
-			);
-			path = Spectrogram;
-			sourceTree = "<group>";
-		};
 		FA6FE0CF24E546F800C2C3D3 = {
 			isa = PBXGroup;
 			children = (
@@ -104,19 +86,54 @@
 		FA6FE0DB24E546F800C2C3D3 /* MetalAudioShaders */ = {
 			isa = PBXGroup;
 			children = (
-				FA5F777A24F12AC800442C36 /* Spectrogram */,
-				FA5F777924F12ABD00442C36 /* Conv1D */,
-				FA5F776624F12ABA00442C36 /* BaseKernel.h */,
-				FA5F775E24F12ABA00442C36 /* BaseKernel.m */,
-				FA5F776024F12ABA00442C36 /* CommandEncoderExtension.h */,
-				FA5F776424F12ABA00442C36 /* CommandEncoderExtension.m */,
-				FA5F775D24F12ABA00442C36 /* half.h */,
-				FA5F776724F12ABA00442C36 /* ShapedBuffer.h */,
-				FA5F775B24F12ABA00442C36 /* ShapedBuffer.m */,
-				FA6FE0DC24E546F800C2C3D3 /* MetalAudioShaders.h */,
+				FAD21B5224F6400200AE8539 /* MatrixToImage */,
+				FAD21B5124F63FC000AE8539 /* Spectrogram */,
+				FAD21B5024F63FB000AE8539 /* Conv1d */,
+				FAD21B3324F63F9300AE8539 /* half.h */,
+				FAD21B2D24F63F9300AE8539 /* MASBaseKernel.h */,
+				FAD21B2624F63F9300AE8539 /* MASBaseKernel.m */,
+				FAD21B3224F63F9300AE8539 /* MASCommandEncoderExtension.h */,
+				FAD21B3824F63F9300AE8539 /* MASCommandEncoderExtension.m */,
+				FAD21B3A24F63F9300AE8539 /* MASShapedBuffer.h */,
+				FAD21B2B24F63F9300AE8539 /* MASShapedBuffer.m */,
 				FA6FE0DD24E546F800C2C3D3 /* Info.plist */,
 			);
 			path = MetalAudioShaders;
+			sourceTree = "<group>";
+		};
+		FAD21B5024F63FB000AE8539 /* Conv1d */ = {
+			isa = PBXGroup;
+			children = (
+				FAD21B2E24F63F9300AE8539 /* conv1d.metal */,
+				FAD21B3924F63F9300AE8539 /* MASConv1dDescriptor.h */,
+				FAD21B2C24F63F9300AE8539 /* MASConv1dDescriptor.m */,
+				FAD21B2F24F63F9300AE8539 /* MASConv1dFactory.h */,
+				FAD21B2724F63F9300AE8539 /* MASConv1dFactory.m */,
+				FAD21B3024F63F9300AE8539 /* MASConv1dKernel.h */,
+				FAD21B2824F63F9300AE8539 /* MASConv1dKernel.m */,
+			);
+			path = Conv1d;
+			sourceTree = "<group>";
+		};
+		FAD21B5124F63FC000AE8539 /* Spectrogram */ = {
+			isa = PBXGroup;
+			children = (
+				FAD21B3124F63F9300AE8539 /* MASSpectrogramDescriptor.h */,
+				FAD21B3524F63F9300AE8539 /* MASSpectrogramDescriptor.m */,
+				FAD21B3424F63F9300AE8539 /* MASSpectrogramFactory.h */,
+				FAD21B2924F63F9300AE8539 /* MASSpectrogramFactory.m */,
+				FAD21B3624F63F9300AE8539 /* MASSpectrogramKernel.h */,
+				FAD21B3724F63F9300AE8539 /* MASSpectrogramKernel.m */,
+				FAD21B2A24F63F9300AE8539 /* spectrogram.metal */,
+			);
+			path = Spectrogram;
+			sourceTree = "<group>";
+		};
+		FAD21B5224F6400200AE8539 /* MatrixToImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MatrixToImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,15 +143,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5F776D24F12ABA00442C36 /* SpectrogramKernel.h in Headers */,
-				FA5F776A24F12ABA00442C36 /* Conv1DKernel.h in Headers */,
-				FA6FE0DE24E546F800C2C3D3 /* MetalAudioShaders.h in Headers */,
-				FA5F777424F12ABA00442C36 /* Conv1DDescriptor.h in Headers */,
-				FA5F777824F12ABA00442C36 /* ShapedBuffer.h in Headers */,
-				FA5F777224F12ABA00442C36 /* SpectrogramDescriptor.h in Headers */,
-				FA5F777124F12ABA00442C36 /* CommandEncoderExtension.h in Headers */,
-				FA5F777724F12ABA00442C36 /* BaseKernel.h in Headers */,
-				FA5F776E24F12ABA00442C36 /* half.h in Headers */,
+				FAD21B4524F63F9300AE8539 /* MASConv1dKernel.h in Headers */,
+				FAD21B4F24F63F9300AE8539 /* MASShapedBuffer.h in Headers */,
+				FAD21B4424F63F9300AE8539 /* MASConv1dFactory.h in Headers */,
+				FAD21B4924F63F9300AE8539 /* MASSpectrogramFactory.h in Headers */,
+				FAD21B4224F63F9300AE8539 /* MASBaseKernel.h in Headers */,
+				FAD21B4824F63F9300AE8539 /* half.h in Headers */,
+				FAD21B4E24F63F9300AE8539 /* MASConv1dDescriptor.h in Headers */,
+				FAD21B4B24F63F9300AE8539 /* MASSpectrogramKernel.h in Headers */,
+				FAD21B4624F63F9300AE8539 /* MASSpectrogramDescriptor.h in Headers */,
+				FAD21B4724F63F9300AE8539 /* MASCommandEncoderExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,15 +223,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5F777524F12ABA00442C36 /* CommandEncoderExtension.m in Sources */,
-				FA5F777324F12ABA00442C36 /* SpectrogramDescriptor.m in Sources */,
-				FA5F777024F12ABA00442C36 /* SpectrogramKernel.m in Sources */,
-				FA5F776F24F12ABA00442C36 /* BaseKernel.m in Sources */,
-				FA5F776C24F12ABA00442C36 /* ShapedBuffer.m in Sources */,
-				FA5F776B24F12ABA00442C36 /* Conv1DKernel.m in Sources */,
-				FA5F776824F12ABA00442C36 /* spectrogram.metal in Sources */,
-				FA5F776924F12ABA00442C36 /* Conv1DDescriptor.m in Sources */,
-				FA5F777624F12ABA00442C36 /* conv1d.metal in Sources */,
+				FAD21B4324F63F9300AE8539 /* conv1d.metal in Sources */,
+				FAD21B4D24F63F9300AE8539 /* MASCommandEncoderExtension.m in Sources */,
+				FAD21B3D24F63F9300AE8539 /* MASConv1dKernel.m in Sources */,
+				FAD21B4C24F63F9300AE8539 /* MASSpectrogramKernel.m in Sources */,
+				FAD21B4124F63F9300AE8539 /* MASConv1dDescriptor.m in Sources */,
+				FAD21B4A24F63F9300AE8539 /* MASSpectrogramDescriptor.m in Sources */,
+				FAD21B3B24F63F9300AE8539 /* MASBaseKernel.m in Sources */,
+				FAD21B3F24F63F9300AE8539 /* spectrogram.metal in Sources */,
+				FAD21B3E24F63F9300AE8539 /* MASSpectrogramFactory.m in Sources */,
+				FAD21B4024F63F9300AE8539 /* MASShapedBuffer.m in Sources */,
+				FAD21B3C24F63F9300AE8539 /* MASConv1dFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

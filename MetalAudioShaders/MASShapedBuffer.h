@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ShapedBuffer : NSObject
+@interface MASShapedBuffer : NSObject
 
 -(instancetype) initWithShape: (NSArray<NSNumber *> *) shape andTypeSize: (unsigned short) typeSize;
 

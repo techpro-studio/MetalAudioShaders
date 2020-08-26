@@ -6,15 +6,19 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "BaseKernel.h"
+#import "MASBaseKernel.h"
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CommandEncoderExtension: NSObject
+@interface MASCommandEncoderExtension: NSObject
 
 +(void)dispatchMatrix: (MPSMatrix *)matrix
+     inCommandEncoder: (id<MTLComputeCommandEncoder>) commandEncoder
+                 with: (id<MTLComputePipelineState>) pipelineState;
+
++(void)dispatchImage: (MPSImage *) image
      inCommandEncoder: (id<MTLComputeCommandEncoder>) commandEncoder
                  with: (id<MTLComputePipelineState>) pipelineState;
 

@@ -6,10 +6,10 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-#import "SpectrogramDescriptor.h"
+#import "MASSpectrogramDescriptor.h"
 #import "half.h"
 
-@implementation SpectrogramDescriptor
+@implementation MASSpectrogramDescriptor
 
 
 -(instancetype)initWithNfft:(unsigned short)nfft
@@ -29,7 +29,7 @@
         _step = nfft - noverlap;
         _outputSize = (inputSize - noverlap) / _step;
         _outputFeatureChannels = isComplex ? nfft : (nfft / 2) + 1;
-        _window = [[ShapedBuffer alloc] initWithShape:@[@(_nfft)] andTypeSize:[self typeSize]];
+        _window = [[MASShapedBuffer alloc] initWithShape:@[@(_nfft)] andTypeSize:[self typeSize]];
         [self setNoWindow];
     }
     return self;

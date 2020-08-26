@@ -27,6 +27,18 @@ constexpr T pi(){
 }
 
 template<typename T>
+constexpr T min_value(){
+    if (is_same<T, half>::value){
+        return 5.9605e-8h;
+    } else {
+        return 1.5849e-13f;
+    }
+}
+
+
+
+
+template<typename T>
 vec<T, 2> real_dft_step(constant T *input, constant T* window, ushort k, ushort nfft){
     vec<T, 2> value {0.h, 0.h};
     for (int n = 0; n < nfft; ++n) {
@@ -52,8 +64,8 @@ vec<T, 2> complex_dft_step(constant vec<T, 2> *input, constant T* window,  ushor
 template<typename T>
 T calculate_magnitude(vec<T, 2> complex) {
     T magnitude = sqrt(complex[0] * complex[0] + complex[1] * complex[1]);
-    magnitude += 5.9605e-8h;
-    T result = 10.0h * log10(magnitude);
+    magnitude += min_value<T>();
+    T result = 10.0 * log10(magnitude);
     return result;
 }
 
