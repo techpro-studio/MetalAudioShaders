@@ -34,11 +34,21 @@
     [commandEncoder setComputePipelineState:self.pipelineState];
 
     [commandEncoder setBytes: &config length:2 * sizeof(unsigned short) atIndex:0];
-    [commandEncoder setBuffer:matrix.data offset:0 atIndex:1];
+    [commandEncoder setBuffer: matrix.data offset:0 atIndex:1];
     [commandEncoder setTexture:image.texture atIndex:2];
     
 
-    [MASCommandEncoderExtension dispatchMatrix:matrix inCommandEncoder:commandEncoder with: self.pipelineState];
+    __auto_type width = self.pipelineState.threadExecutionWidth;
+    __auto_type height = self.pipelineState.maxTotalThreadsPerThreadgroup / width;
+
+    MTLSize threadGroupSize = MTLSizeMake(width, height, 1);
+    MTLSize threadGroups = MTLSizeMake(
+       (matrix.columns + width - 1) / width,
+       ((matrix.rows + 3) / 4  + height - 1) / height,
+        1
+    );
+
+    [commandEncoder dispatchThreadgroups:threadGroups threadsPerThreadgroup: threadGroupSize];
 
     [commandEncoder endEncoding];
 }
