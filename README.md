@@ -1,6 +1,4 @@
 # MetalAudioShaders
-
-[![CI Status](https://img.shields.io/travis/Oleksii Moiseenko/MetalAudioShaders.svg?style=flat)](https://travis-ci.org/Oleksii Moiseenko/MetalAudioShaders)
 [![Version](https://img.shields.io/cocoapods/v/MetalAudioShaders.svg?style=flat)](https://cocoapods.org/pods/MetalAudioShaders)
 [![License](https://img.shields.io/cocoapods/l/MetalAudioShaders.svg?style=flat)](https://cocoapods.org/pods/MetalAudioShaders)
 [![Platform](https://img.shields.io/cocoapods/p/MetalAudioShaders.svg?style=flat)](https://cocoapods.org/pods/MetalAudioShaders)
