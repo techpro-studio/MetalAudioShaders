@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MetalAudioShaders'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'MAS'
   s.description      = "MPS like shaders for audio processing. Spectrogram. Conv1d"
 
