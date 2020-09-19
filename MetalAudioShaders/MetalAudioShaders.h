@@ -15,6 +15,5 @@
 #import "MASSpectrogramKernel.h"
 #import "MASSpectrogramFactory.h"
 #import "MASShapedBuffer.h"
-#import "MASMatrixToMPSImageKernel.h"
 
 #endif /* MetalAudioShaders_h */
