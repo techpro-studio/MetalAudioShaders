@@ -29,6 +29,9 @@
 		FAD21B4D24F63F9300AE8539 /* MASCommandEncoderExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD21B3824F63F9300AE8539 /* MASCommandEncoderExtension.m */; };
 		FAD21B4E24F63F9300AE8539 /* MASConv1dDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3924F63F9300AE8539 /* MASConv1dDescriptor.h */; };
 		FAD21B4F24F63F9300AE8539 /* MASShapedBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD21B3A24F63F9300AE8539 /* MASShapedBuffer.h */; };
+		FAD8CD532516817200EF61E1 /* MASMatrixToMPSImageKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8CD502516817200EF61E1 /* MASMatrixToMPSImageKernel.m */; };
+		FAD8CD542516817200EF61E1 /* MASMatrixToMPSImageKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD8CD512516817200EF61E1 /* MASMatrixToMPSImageKernel.h */; };
+		FAD8CD552516817200EF61E1 /* matrix_to_image.metal in Sources */ = {isa = PBXBuildFile; fileRef = FAD8CD522516817200EF61E1 /* matrix_to_image.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		FAD21B3824F63F9300AE8539 /* MASCommandEncoderExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCommandEncoderExtension.m; sourceTree = "<group>"; };
 		FAD21B3924F63F9300AE8539 /* MASConv1dDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConv1dDescriptor.h; sourceTree = "<group>"; };
 		FAD21B3A24F63F9300AE8539 /* MASShapedBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShapedBuffer.h; sourceTree = "<group>"; };
+		FAD8CD502516817200EF61E1 /* MASMatrixToMPSImageKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASMatrixToMPSImageKernel.m; sourceTree = "<group>"; };
+		FAD8CD512516817200EF61E1 /* MASMatrixToMPSImageKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASMatrixToMPSImageKernel.h; sourceTree = "<group>"; };
+		FAD8CD522516817200EF61E1 /* matrix_to_image.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = matrix_to_image.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		FA6FE0DB24E546F800C2C3D3 /* MetalAudioShaders */ = {
 			isa = PBXGroup;
 			children = (
+				FAD8CD4F2516817200EF61E1 /* MatrixToImage */,
 				FAD21B5124F63FC000AE8539 /* Spectrogram */,
 				FAD21B5024F63FB000AE8539 /* Conv1d */,
 				FAD21B3324F63F9300AE8539 /* half.h */,
@@ -131,6 +138,16 @@
 			path = Spectrogram;
 			sourceTree = "<group>";
 		};
+		FAD8CD4F2516817200EF61E1 /* MatrixToImage */ = {
+			isa = PBXGroup;
+			children = (
+				FAD8CD502516817200EF61E1 /* MASMatrixToMPSImageKernel.m */,
+				FAD8CD512516817200EF61E1 /* MASMatrixToMPSImageKernel.h */,
+				FAD8CD522516817200EF61E1 /* matrix_to_image.metal */,
+			);
+			path = MatrixToImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -144,6 +161,7 @@
 				FAD21B4424F63F9300AE8539 /* MASConv1dFactory.h in Headers */,
 				FAD21B4924F63F9300AE8539 /* MASSpectrogramFactory.h in Headers */,
 				FAD21B4224F63F9300AE8539 /* MASBaseKernel.h in Headers */,
+				FAD8CD542516817200EF61E1 /* MASMatrixToMPSImageKernel.h in Headers */,
 				FAD21B4824F63F9300AE8539 /* half.h in Headers */,
 				FAD21B4E24F63F9300AE8539 /* MASConv1dDescriptor.h in Headers */,
 				FAD21B4B24F63F9300AE8539 /* MASSpectrogramKernel.h in Headers */,
@@ -220,8 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3DA1A324F6634700A33ED4 /* conv1d.metal in Sources */,
+				FAD8CD552516817200EF61E1 /* matrix_to_image.metal in Sources */,
 				FAD21B4D24F63F9300AE8539 /* MASCommandEncoderExtension.m in Sources */,
 				FAD21B3D24F63F9300AE8539 /* MASConv1dKernel.m in Sources */,
+				FAD8CD532516817200EF61E1 /* MASMatrixToMPSImageKernel.m in Sources */,
 				FAD21B4C24F63F9300AE8539 /* MASSpectrogramKernel.m in Sources */,
 				FAD21B4124F63F9300AE8539 /* MASConv1dDescriptor.m in Sources */,
 				FAD21B4A24F63F9300AE8539 /* MASSpectrogramDescriptor.m in Sources */,
